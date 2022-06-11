@@ -8,7 +8,7 @@ const fortuneBtn = document.getElementById("fortuneButton")
 const imgForm = document.getElementById('imgForm')
 const body = document.querySelector('body')
 
-
+//gets random compliment and alerts it
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
         .then(res => {
@@ -18,7 +18,7 @@ const getCompliment = () => {
             
     });
 };
-
+//gets random fortune and alerts it
 const getFortune = () => {
     axios.get("http://localhost:4000/api/fortune/")
         .then(res => {
@@ -28,7 +28,7 @@ const getFortune = () => {
         });
 
 };
-
+// gets the image url from object and appends it to body
 const getImage = () => {
     axios.get("http://localhost:4000/api/image/").then(res => {
         const newPhoto = res.data
@@ -38,7 +38,7 @@ const getImage = () => {
         body.appendChild(imgDiv)
     })
 }
-
+// takes input value ( in this case a img url ) and changes the objects image endpoint to new url
 const changeImg = (e) => {
     e.preventDefault()
     const imgInput = document.getElementById('changePic')

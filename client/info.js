@@ -17,7 +17,7 @@ let baseURL = `http://localhost:4000/api/lists`
 
 
 
-
+// gets and displays all compliments in object
 const complimentList = () => {
     axios.get("http://localhost:4000/api/list/")
         .then(res => {
@@ -29,6 +29,7 @@ const complimentList = () => {
                     
                 })
                 .join("");
+                //attaches a delete request via a click event to newly created <li> tag
                 let info = document.querySelectorAll('.compliment')
                 let infoArray = Array.from(info)
                 for (const deleteComp of info) {
@@ -45,7 +46,7 @@ const complimentList = () => {
             complimentContainer.innerHTML = '<li>' + err.message + '</li>'
         })
 }
-
+// gets and displays all fortunes in object
 const fortuneList = () => {
     axios.get("http://localhost:4000/api/fortList/")
         .then(res => {
@@ -55,6 +56,7 @@ const fortuneList = () => {
                     return '<li class="fortune">' + fortune + '</li>';
                 })
                 .join("");
+                //attaches a delete request via a click event to newly created <li> tag
                 let fortInfo = document.querySelectorAll('.fortune')
                 let fortInfoArray = Array.from(fortInfo)
                 for (const deleteFort of fortInfo) {
@@ -70,7 +72,7 @@ const fortuneList = () => {
             fortuneContainer.innerHTML = '<li>' + err.message + '</li>'
         })
 }
-
+// takes an input ( in this case a new compliment ) and pushes it to the compliment endpoint of the object
 const addCompliment = (e) => {
     e.preventDefault()
 
@@ -81,7 +83,7 @@ const addCompliment = (e) => {
 
 
 }
-
+// takes an input ( in this case a new fortune ) and pushes it to the fortune endpoint of the object
 const addFortune = (e) => {
     e.preventDefault()
 
