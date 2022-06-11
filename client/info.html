@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <button><a href="./index.html">Main Page</a></button>
+    <br />
+    <button id="getAllComps">Get Compliments</button>
+    <form id="compForm">
+      <input type="text" id="addCompliment" placeholder="Add A Compliment" />
+      <button type="submit">Add</button>
+    </form>
+    <ul id="complimentCont"></ul>
+    <button id="getAllFort">Get Fortunes</button>
+    <form id="fortForm">
+      <input type="text" id="addFortune" placeholder="Add A Fortune" />
+      <button>Add</button>
+    </form>
+    <ul id="fortuneCont"></ul>
+    <br />
+    <h3>Click Compliment or Fortune to Delete</h3>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="info.js"></script>
+  </body>
+</html>
